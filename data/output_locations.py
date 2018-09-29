@@ -20,13 +20,14 @@ rooms = set(new_loc)
 
 mapping = list(map(lambda x: x.split('-'), rooms))
 buildings = [x[-1] for x in mapping]
-buildings = np.array(set(buildings))
+buildings = list(set(buildings))
+buildings = list(map(lambda x: x.replace('\r', ''), buildings))
 
-with open('buildings.csv', 'wb') as myfile:
-     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-     wr.writerow(buildings)
-
-
+#np.savetxt('buildings.csv', buildings, fmt='%s')
+with open('buildings.csv', 'w') as f:
+    
+    for i in buildings:
+        f.write(i + ',,\n')
 
 
 
