@@ -7,6 +7,7 @@ class Map extends Component {
             <GoogleMap
                 defaultCenter = { { lat: 40.107472, lng: -88.227236 } }
                 defaultZoom = { 16 }
+                mapTypeId = "Terrain"
             >
             </GoogleMap>
         ));
