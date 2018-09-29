@@ -1,0 +1,117 @@
+,accuracy,formatted_address,google_place_id,input_string,latitude,longitude,number_of_results,postcode,status,type
+0,ROOFTOP,"104 S Mathews Ave, Urbana, IL 61801, USA",ChIJM1q0uWrXDIgRS5dFNX6-w48,"TransportationBuilding,Urbana,United States",40.1117059,-88.22520779999999,1,61801,OK,"establishment,general_contractor,point_of_interest"
+1,ROOFTOP,"Lincoln Avenue Residence Hall, Urbana, IL 61801, USA",ChIJo87ZERHXDIgRdt9tNlfKh2g," LincolnAvenueResidence Hall,Urbana,United States",40.1043281,-88.2199577,1,61801,OK,subpremise
+2,ROOFTOP,"Art and Design Building, 408 E Peabody Dr, Champaign, IL 61820, USA",ChIJvc6_RTvXDIgRCSHG5wEODhY," Art andDesign Building,Urbana,United States",40.1018339,-88.2324998,1,61820,OK,premise
+3,ROOFTOP,"Lincoln Hall, 702 S Wright St, Urbana, IL 61801, USA",ChIJj-d5cT7XDIgRYqZrN-Z4yCY,"Lincoln Hall,Urbana,United States",40.1066066,-88.22823249999999,1,61801,OK,premise
+4,ROOFTOP,"709 S Mathews Ave, Urbana, IL 61801, USA",ChIJyWA1Bj7XDIgRCMKLB-RaR-w,"FoellingerAuditorium,Urbana,United States",40.1059431,-88.2272864,1,61801,OK,"establishment,point_of_interest"
+5,ROOFTOP,"300 Broadway Ave, Urbana, IL 61801, USA",ChIJoaZjB6DXDIgRy3JAHcaP1Hw,"Frame,Urbana,United States",40.1105839,-88.2070866,1,61801,OK,"establishment,point_of_interest,store"
+6,ROOFTOP,"104 S Wright St, Urbana, IL 61801, USA",ChIJpTF5cEDXDIgRLEf18NBuXq8," TalbotLaboratory,Urbana,United States",40.1118523,-88.2282413,1,61801,OK,"establishment,point_of_interest,university"
+7,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ," FoodService Building,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+8,ROOFTOP,"Regency Park Shopping Center, 9294 Metcalf Ave, Overland Park, KS 66212, USA",ChIJtyCc8ZTrwIcRSL_fsxTzFb8," Micro &NanotechnologyLab,Urbana,United States",38.9607614,-94.6701054,1,66212,OK,"electronics_store,establishment,point_of_interest,store"
+9,ROOFTOP,"English Building, 608 S Wright St, Urbana, IL 61801, USA",ChIJXUsmQj7XDIgRSkw8XkwlUJg," EnglishBuilding,Urbana,United States",40.1075683,-88.2281948,1,61801,OK,premise
+10,ROOFTOP,"1710 E Windsor Rd, Urbana, IL 61802, USA",ChIJ6WMLbzbWDIgRMzepyMMOzOI,"Christie,Urbana,United States",40.084212,-88.18592199999999,1,61802,OK,"doctor,establishment,health,point_of_interest"
+11,,,," InstGov & PublicAffairs Bldg,Urbana,United States",,,0,,ZERO_RESULTS,
+12,ROOFTOP,"1203 West Nevada Street, 1205 1/2 W Nevada St #907, Urbana, IL 61801, USA",Ekk5MDcsIDEyMDMgV2VzdCBOZXZhZGEgU3RyZWV0LCAxMjA1IDEvMiBXIE5ldmFkYSBTdCwgVXJiYW5hLCBJTCA2MTgwMSwgVVNBIh8aHQoWChQKEgnB0sR6FtcMiBFnJiBHBGcuQhIDOTA3," 907 1/2W Nevada,Urbana,United States",40.1055427,-88.224705,1,61801,OK,subpremise
+13,ROOFTOP,"David Kinley Hall, 1407 W Gregory Dr, Urbana, IL 61801, USA",ChIJ51_2pz3XDIgRm_U3cL9O62k," DavidKinley Hall,Urbana,United States",40.1036264,-88.22835429999999,1,61801,OK,premise
+14,ROOFTOP,"1101 W Peabody Dr, Urbana, IL 61801, USA",ChIJvYcnWRfXDIgRcnVFDWn8kRk," NationalSoybeanRes Ctr,Urbana,United States",40.1010646,-88.2225715,1,61801,OK,"establishment,point_of_interest"
+15,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Huang,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+16,GEOMETRIC_CENTER,"Goodwin at Ceramics Building, Urbana, IL 61801, USA",ChIJOeCmKWvXDIgRwtzCZ6f-igc," CeramicsBuilding,Urbana,United States",40.111654,-88.224066,1,61801,OK,"bus_station,establishment,point_of_interest,transit_station"
+17,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Woodard,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+18,ROOFTOP,"Freer Hall, 906 S Goodwin Ave, Urbana, IL 61801, USA",ChIJZzNuvxbXDIgRiapnPTHdpYw,"Freer Hall,Urbana,United States",40.1048188,-88.2228643,1,61801,OK,premise
+19,ROOFTOP,"George Huff Hall, 1206 S 4th St, Champaign, IL 61820, USA",ChIJMRdMCjvXDIgR3I1VKM-D7Ms," Huff Hall,Urbana,United States",40.1038447,-88.2327387,1,61820,OK,"establishment,point_of_interest"
+20,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Beauchamp,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+21,ROOFTOP,"201 N Goodwin Ave, Urbana, IL 61801, USA",ChIJqXmEqmvXDIgRMJY1DdQBn04," SiebelCenter forComp Sci,Urbana,United States",40.11380279999999,-88.2249052,1,61801,OK,"establishment,point_of_interest"
+22,ROOFTOP,"605 Maple St, Coffeyville, KS 67337, USA",ChIJpQnt-ViEt4cRBwL4yCwZJlE," Electrical& ComputerEng Bldg,Urbana,United States",37.0378225,-95.6170928,1,67337,OK,"establishment,point_of_interest,store"
+23,ROOFTOP,"Foreign Languages Building, 707 S Mathews Ave, Urbana, IL 61801, USA",ChIJ-W8V_RXXDIgR8ByHqkmaViY," ForeignLanguagesBuilding,Urbana,United States",40.1062782,-88.2260844,1,61801,OK,premise
+24,ROOFTOP,"500 S Goodwin Ave, Urbana, IL 61801, USA",ChIJs2weZhTXDIgR9-Mz0s0qNrs," KrannertCenter forPerf Arts,Urbana,United States",40.1080244,-88.2225153,1,61801,OK,"establishment,point_of_interest"
+25,ROOFTOP,"1304 W Springfield Ave, Urbana, IL 61801, USA",ChIJM-RtnWrXDIgRRP-cVNJU2Lo," DigitalComputerLaboratory,Urbana,United States",40.1131069,-88.2265673,1,61801,OK,"establishment,point_of_interest"
+26,ROOFTOP,"1301 W Green St, Urbana, IL 61801, USA",ChIJuWOXbxXXDIgRCUmVeb6iCbk," NaturalHistory Building,Urbana,United States",40.1094472,-88.2260208,1,61801,OK,"establishment,point_of_interest,school"
+27,ROOFTOP,"1308 W Main St, Urbana, IL 61801, USA",ChIJi4IA30HXDIgRfnz0Z73MpfI,"CoordinatedScience Lab,Urbana,United States",40.1148693,-88.2267195,1,61801,OK,"establishment,point_of_interest,university"
+28,ROOFTOP,"Noble Hall, 1209 S 4th St, Champaign, IL 61820, USA",ChIJX8Jk3jrXDIgRgnEUbVu3rgs," Noble Hall,Urbana,United States",40.1023187,-88.2341727,1,61820,OK,premise
+29,ROOFTOP,"1304 W Green St, Urbana, IL 61801, USA",ChIJ-1qO-j_XDIgRRyMBf46-EXM," MaterialsScience& Eng Bld,Urbana,United States",40.1108597,-88.2261108,1,61801,OK,"establishment,point_of_interest"
+30,ROOFTOP,"1105 W Nevada St, Urbana, IL 61801, USA",ChIJZdP-rBbXDIgRScQyvbeHWn4," ChildDevelopmentLaboratory,Urbana,United States",40.1056104,-88.2219244,1,61801,OK,"establishment,point_of_interest,university"
+31,GEOMETRIC_CENTER,"Urbana, IL 61801, USA",ChIJq1iLLRbXDIgRlyHcE4jNa_0,"AgriculturalEngrSciences Bld,Urbana,United States",40.1036179,-88.22607269999999,1,61801,OK,"establishment,point_of_interest"
+32,ROOFTOP,"Stock Pavilion, 1402 W Pennsylvania Ave, Urbana, IL 61801, USA",ChIJO-3KUj3XDIgR4qQG9GCbAqo,"Stock Pavilion,Urbana,United States",40.101042,-88.227166,1,61801,OK,premise
+33,ROOFTOP,"611 Lorado Taft Dr, Champaign, IL 61820, USA",ChIJlRcNPz3XDIgR2R_827_Hkzc,"ArchitectureBuilding,Urbana,United States",40.1022396,-88.2280127,1,61820,OK,"establishment,point_of_interest,university"
+34,ROOFTOP,"301 E Gregory Dr, Champaign, IL 61820, USA",ChIJeUz7YTrXDIgRC0QtdLZNcOc," StudentDining & ResProgram,Urbana,United States",40.1039366,-88.235502,1,61820,OK,"establishment,point_of_interest,university"
+35,ROOFTOP,"Altgeld Hall, 1409 W Green St, Urbana, IL 61801, USA",ChIJjXehsT_XDIgR4vxFLlBEF54,"Altgeld Hall,Urbana,United States",40.1093349,-88.22835859999999,1,61801,OK,premise
+36,ROOFTOP,"George Huff Hall, 1206 S 4th St, Champaign, IL 61820, USA",ChIJMRdMCjvXDIgR3I1VKM-D7Ms,"Huff Hall,Urbana,United States",40.1038447,-88.2327387,1,61820,OK,"establishment,point_of_interest"
+37,ROOFTOP,"Stock Pavilion, 1402 W Pennsylvania Ave, Urbana, IL 61801, USA",ChIJO-3KUj3XDIgR4qQG9GCbAqo," StockPavilion,Urbana,United States",40.101042,-88.227166,1,61801,OK,premise
+38,ROOFTOP,"407 S Goodwin Ave, Urbana, IL 61801, USA",ChIJub4wBRXXDIgR8sSlY3bptTE," Burrill Hall,Urbana,United States",40.109162,-88.2249021,1,61801,OK,"establishment,point_of_interest,university"
+39,ROOFTOP,"Chemical and Life Sciences Laboratory, 601 S Goodwin Ave, Urbana, IL 61801, USA",ChIJG_zrrRXXDIgRLcGxg7KMvb0,"Chemical andLife Sci Lab,Urbana,United States",40.1081456,-88.2244528,1,61801,OK,premise
+40,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Nalla,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+41,ROOFTOP,"Mumford Hall, 1301 W Gregory Dr, Urbana, IL 61801, USA",ChIJBcidMhbXDIgR9DWvDAwNidA,"Mumford Hall,Urbana,United States",40.1036253,-88.22603769999999,1,61801,OK,premise
+42,ROOFTOP,"1208 W Peabody Dr, Urbana, IL 61801, USA",ChIJVfmokxfXDIgRXiqIwDvw3xE,"ArchitectureAnnex,Urbana,United States",40.1018316,-88.2253878,1,61801,OK,"establishment,point_of_interest"
+43,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Weeks,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+44,ROOFTOP,"Astronomy Building, 1002 W Green St, Urbana, IL 61801, USA",ChIJqSR4TBPXDIgRhVNN3iDgkYc,"AstronomyBuilding,Urbana,United States",40.1109366,-88.22088699999999,1,61801,OK,premise
+45,ROOFTOP,"1406 W Green St, Urbana, IL 61801, USA",ChIJ56DIjj_XDIgRrTh8eeZEtF0," EverittLaboratory,Urbana,United States",40.1108437,-88.22830739999999,1,61801,OK,"establishment,point_of_interest,school"
+46,ROOFTOP,"Veterinary Medicine Basic Sciences Building, Urbana, IL 61802, USA",ChIJJakjzB3XDIgR2AnYfYoxTCk," VetMed BasicSciences Bldg,Urbana,United States",40.0927228,-88.22099659999999,1,61802,OK,premise
+47,GEOMETRIC_CENTER,"Urbana St, Danville Township, IL 61883, USA",ChIJMSPKEBVRDYgRCsBQbrX2RvE,"Danville IL,Urbana,United States",40.061436,-87.6401209,1,61883,OK,route
+48,ROOFTOP,"Institute for Genomic Biology, 905 S Goodwin Ave, Urbana, IL 61801, USA",ChIJdwh0XRbXDIgR0vNjU7WG-rc,"Bevier Hall,Urbana,United States",40.1049315,-88.22475899999999,1,61801,OK,premise
+49,ROOFTOP,"711 Kettering Park Dr, Urbana, IL 61801, USA",ChIJ7yqMw2LXDIgRlG718dMI0AM,"Mechanical,Urbana,United States",40.129589,-88.217759,1,61801,OK,"establishment,general_contractor,home_goods_store,plumber,point_of_interest,store"
+50,ROOFTOP,"500 E Peabody Dr, Champaign, IL 61820, USA",ChIJB0m9WTvXDIgRh5bV6KQbV0k," KrannertArt Museum,Urbana,United States",40.101862,-88.23173709999999,1,61820,OK,"establishment,museum,point_of_interest"
+51,ROOFTOP,"Freer Hall, 906 S Goodwin Ave, Urbana, IL 61801, USA",ChIJZzNuvxbXDIgRiapnPTHdpYw," Freer Hall,Urbana,United States",40.1048188,-88.2228643,1,61801,OK,premise
+52,ROOFTOP,"501 E Daniel St, Champaign, IL 61820, USA",ChIJjY3Zyj7XDIgRqg0OoWV0F54," GradSch of Lib &Info Science,Urbana,United States",40.1076722,-88.2315023,1,61820,OK,"establishment,point_of_interest,school"
+53,ROOFTOP,"901 W Oregon St, Urbana, IL 61801, USA",ChIJ9bwMzRPXDIgRjCGqr9AL0OM," 901W Oregon,Urbana,United States",40.10676340000001,-88.2194852,1,61801,OK,premise
+54,ROOFTOP,"1114 W Nevada St, Urbana, IL 61801, USA",ChIJt_BjIRTXDIgROqJ-bsZd_aU," MusicBuilding,Urbana,United States",40.106396,-88.22319750000001,2,61801,OK,"establishment,point_of_interest,university"
+55,ROOFTOP,"Doris Kelley Christopher Hall, 904 W Nevada St, Urbana, IL 61801, USA",ChIJNx2j1hPXDIgRHIslwTiXNwc," ChristopherHall,Urbana,United States",40.1063303,-88.2195623,1,61801,OK,premise
+56,ROOFTOP,"Roger Adams Laboratory, 600 S Mathews Ave, Urbana, IL 61801, USA",ChIJdTLmuxXXDIgR2fWqfHNXfA8," RogerAdamsLaboratory,Urbana,United States",40.1077057,-88.22494309999999,1,61801,OK,premise
+57,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Forman,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+58,ROOFTOP,"Education Bldg, 1310 S 6th St, Champaign, IL 61820, USA",ChIJ_ay83DzXDIgRUW7XaIB4Qbo," EducationBuilding,Urbana,United States",40.10207219999999,-88.2296281,1,61820,OK,"establishment,point_of_interest"
+59,ROOFTOP,"UIUC Engineering Hall, Urbana, IL 61801, USA",ChIJkfZ3_D_XDIgRk7pzCtLEwb4,"EngineeringHall,Urbana,United States",40.110833,-88.22694399999999,1,61801,OK,premise
+60,ROOFTOP,"1110 W Green St Loomis Laboratory, Urbana, IL 61801, USA",ChIJb0AgzBTXDIgRkCYvOHR1MVE," LoomisLaboratory,Urbana,United States",40.110911,-88.2233559,1,61801,OK,subpremise
+61,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Faivre,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+62,ROOFTOP,"Slavic Review, 1207 W Oregon St, Urbana, IL 61801, USA",ChIJj7ij2hXXDIgR30obEY18Nvs," 1207W Oregon,Urbana,United States",40.1066692,-88.2248302,1,61801,OK,premise
+63,ROOFTOP,"International Studies Building, 910 S 5th St, Champaign, IL 61820, USA",ChIJhxl2SznXDIgR33KkJIJxEO4,"InternationalStudies Building,Urbana,United States",40.1072128,-88.2316263,1,61820,OK,premise
+64,ROOFTOP,"1304 W Green St, Urbana, IL 61801, USA",ChIJ-1qO-j_XDIgRRyMBf46-EXM,"EngineeringBldg,Urbana,United States",40.1108597,-88.2261108,1,61801,OK,"establishment,point_of_interest"
+65,ROOFTOP,"Chemistry Annex, Urbana, IL 61801, USA",ChIJYTcFjhXXDIgRcJTtu1FV_6Q," ChemistryAnnex,Urbana,United States",40.1077762,-88.2260671,1,61801,OK,subpremise
+66,ROOFTOP,"Gregory Hall, 810 S Wright St, Urbana, IL 61801, USA",ChIJCTSK3D3XDIgRw4G2mDVaHLM," Gregory Hall,Urbana,United States",40.1056086,-88.2280989,1,61801,OK,premise
+67,ROOFTOP,"Turner Hall, 1102 S Goodwin Ave, Urbana, IL 61801, USA",ChIJvYFuCBfXDIgRBUcBM54zvdc,"Turner Hall,Urbana,United States",40.10283039999999,-88.22428450000001,1,61801,OK,premise
+68,ROOFTOP,"607 S Mathews Ave, Urbana, IL 61801, USA",ChIJ-b_t9hXXDIgR2SIIkBGBBro,"Davenport Hall,Urbana,United States",40.1073129,-88.2261789,1,61801,OK,"establishment,point_of_interest,university"
+69,ROOFTOP,"Mechanical Engineering Building, 1206 W Green St, Urbana, IL 61801, USA",ChIJWSwVMhXXDIgRuPw0Wxknubw,"MechanicalEngineeringBldg,Urbana,United States",40.1111367,-88.2250555,1,61801,OK,premise
+70,ROOFTOP,"1102 S Goodwin Ave, Urbana, IL 61801, USA",ChIJQ_mSDhfXDIgRpWP8_P4Vf1g,"Agricultural,Urbana,United States",40.1026951,-88.22413089999999,1,61801,OK,"establishment,point_of_interest"
+71,ROOFTOP,"Nathan Newmark Civil Engineering Laboratory, 205 N Mathews Ave, Urbana, IL 61801, USA",ChIJIxUx0kHXDIgRHu4iEHAsg84,"Newmark CivilEngineeringBldg,Urbana,United States",40.1139618,-88.22656479999999,1,61801,OK,"establishment,point_of_interest"
+72,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Favila,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+73,ROOFTOP,"Dance Studio, 905 W Nevada St, Urbana, IL 61801, USA",ChIJzWmzZBHXDIgRUAy1KScNbMk," 905W Nevada,Urbana,United States",40.1056366,-88.2199164,1,61801,OK,premise
+74,ROOFTOP,"Gregory Hall, 810 S Wright St, Urbana, IL 61801, USA",ChIJCTSK3D3XDIgRw4G2mDVaHLM,"Gregory Hall,Urbana,United States",40.1056086,-88.2280989,1,61801,OK,premise
+75,ROOFTOP,"204 E Peabody Dr, Champaign, IL 61820, USA",ChIJp4fwkjrXDIgRFyiSPcB6zmQ," Weston Hall,Urbana,United States",40.1030079,-88.23532159999999,1,61820,OK,"establishment,point_of_interest,university"
+76,ROOFTOP,"Nevada Building, 1203 1/2 W Nevada St, Urbana, IL 61801, USA",ChIJpcK4fBbXDIgRd4cfOkMKOuE," 12031/2 W Nevada,Urbana,United States",40.1055378,-88.224451,1,61801,OK,premise
+77,GEOMETRIC_CENTER,"Champaign, IL, USA",ChIJ6VUmqSTXDIgR-iZoBCUFPKU," Illini Center,Urbana,United States",40.1019523,-88.2271615,1,,OK,"establishment,point_of_interest,university"
+78,GEOMETRIC_CENTER,"Champaign, IL, USA",ChIJ6VUmqSTXDIgR-iZoBCUFPKU," ZhejiangUniversity,Urbana,United States",40.1019523,-88.2271615,1,,OK,"establishment,point_of_interest,university"
+79,ROOFTOP,"Psychology Building, 603 E Daniel St, Champaign, IL 61820, USA",ChIJjeSv7D7XDIgRci6JvA_GrIg,"PsychologyBuilding,Urbana,United States",40.107486,-88.2299551,1,61820,OK,premise
+80,ROOFTOP,"505 S Mathews Ave, Urbana, IL 61801, USA",ChIJd8U1gxXXDIgREfaRySm4rJc," NoyesLaboratory,Urbana,United States",40.1084247,-88.2261142,1,61801,OK,"establishment,point_of_interest"
+81,ROOFTOP,"1302 W Pennsylvania Ave, Urbana, IL 61801, USA",ChIJe58B9RfXDIgRG7quHLduVKQ,"AgriculturalBioprocess Lab,Urbana,United States",40.1010491,-88.22554009999999,1,61801,OK,"establishment,point_of_interest,university"
+82,ROOFTOP,"405 N Mathews Ave, Urbana, IL 61801, USA",ChIJfd8U9CbXDIgRwbykVuLghwY," BeckmanInstitute,Urbana,United States",40.1157707,-88.2272043,1,61801,OK,"establishment,point_of_interest,university"
+83,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Dragic,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+84,ROOFTOP,"1005 W Gregory Dr, Urbana, IL 61801, USA",ChIJE_14JBHXDIgRae8aTVh3P5M," AllenResidence Hall,Urbana,United States",40.1041097,-88.2208505,2,61801,OK,"establishment,point_of_interest"
+85,ROOFTOP,"Wohlers Hall, 1206 S 6th St, Champaign, IL 61820, USA",ChIJUbzg9zzXDIgRbCnqdt9lWQ4,"Wohlers Hall,Urbana,United States",40.1036099,-88.2298467,1,61820,OK,premise
+86,ROOFTOP,"500 S Goodwin Ave, Urbana, IL 61801, USA",ChIJs2weZhTXDIgR9-Mz0s0qNrs,"Krannert Centerfor Perf Arts,Urbana,United States",40.1080244,-88.2225153,1,61801,OK,"establishment,point_of_interest"
+87,ROOFTOP,"Education Bldg, 1310 S 6th St, Champaign, IL 61820, USA",ChIJ_ay83DzXDIgRUW7XaIB4Qbo,"EducationBuilding,Urbana,United States",40.10207219999999,-88.2296281,1,61820,OK,"establishment,point_of_interest"
+88,ROOFTOP,"1206 W Gregory Dr, Urbana, IL 61801, USA",ChIJIT61QhbXDIgRpZx-ux_qv1k," Institutefor GenomicBiology,Urbana,United States",40.1047754,-88.2247235,1,61801,OK,"establishment,point_of_interest,university"
+89,ROOFTOP,"Observatory, 901 S Mathews Ave, Urbana, IL 61801, USA",ChIJBW-rEBbXDIgRJjsQxpMLyME,"Observatory,Urbana,United States",40.1052276,-88.2259677,1,61801,OK,premise
+90,ROOFTOP,"Gregory Place II, 1010 W Nevada St, Urbana, IL 61801, USA",ChIJo0nJ5BPXDIgRxS2fx9GiwyQ," 1010W Nevada,Urbana,United States",40.1064706,-88.22127119999999,1,61801,OK,premise
+91,ROOFTOP,"1101 S Goodwin Ave, Urbana, IL 61801, USA",ChIJwR71sBfXDIgRv9mtjD_0x14," ACES Lib,Urbana,United States",40.1028197,-88.2251108,1,61801,OK,"establishment,library,point_of_interest"
+92,GEOMETRIC_CENTER,"Urbana, IL 61801, USA",ChIJg8m6QBfXDIgRUoyb2TX8PAM," PlantSciencesLaboratory,Urbana,United States",40.1024544,-88.22278480000001,1,61801,OK,"establishment,point_of_interest,university"
+93,ROOFTOP,"1205 West Oregon Street, 1205 W Oregon St, Urbana, IL 61801, USA",ChIJyaDa0RXXDIgRSRJd9SX4RZE," 1205W Oregon,Urbana,United States",40.1066982,-88.2246081,1,61801,OK,premise
+94,ROOFTOP,"1205 W Nevada St, Urbana, IL 61801, USA",ChIJsUBIehbXDIgRbIgNlCtchAU," 1205W Nevada,Urbana,United States",40.1056696,-88.2246923,1,61801,OK,premise
+95,GEOMETRIC_CENTER,"Champaign, IL, USA",ChIJ6VUmqSTXDIgR-iZoBCUFPKU," IlliniCenter,Urbana,United States",40.1019523,-88.2271615,1,,OK,"establishment,point_of_interest,university"
+96,ROOFTOP,"505 E Green St, Urbana, IL 61802, USA",ChIJfVmJBqLXDIgR6VbWWsi0FjI," 505E Green,Urbana,United States",40.110627,-88.20184979999999,1,61802,OK,premise
+97,ROOFTOP,"Animal Sciences Laboratory, 1207 W Gregory Dr, Urbana, IL 61801, USA",ChIJoy_0SxbXDIgRr2gJIFFMTJE," AnimalSciencesLaboratory,Urbana,United States",40.1038046,-88.2251977,1,61801,OK,premise
+98,ROOFTOP,"Illini Hall, 725 S Wright St, Champaign, IL 61820, USA",ChIJ_1ODCD_XDIgR-QyBMYuWc40," Illini Hall,Urbana,United States",40.1094558,-88.22927589999999,1,61820,OK,premise
+99,ROOFTOP,"Chemistry Annex, Urbana, IL 61801, USA",ChIJYTcFjhXXDIgRcJTtu1FV_6Q,"ChemistryAnnex,Urbana,United States",40.1077762,-88.2260671,1,61801,OK,subpremise
+100,ROOFTOP,"515 E Gregory Dr, Champaign, IL 61820, USA",ChIJ-6RAfTzXDIgR1Woa9Xu_SRE," BusinessInstructionalFac,Urbana,United States",40.1037865,-88.2309303,1,61820,OK,"establishment,point_of_interest"
+101,ROOFTOP,"210 W Green St, Urbana, IL 61801, USA",ChIJ5bGfLnXXDIgR7WtgqYYYqm8," Library,Urbana,United States",40.1112053,-88.2095269,1,61801,OK,"book_store,cafe,establishment,finance,food,library,point_of_interest,store"
+102,ROOFTOP,"1503 S Maryland Dr, Urbana, IL 61801, USA",ChIJn2VnvhnXDIgRFwpV7p0vlHM," MeatScienceLaboratory,Urbana,United States",40.0991849,-88.2230285,1,61801,OK,"establishment,food,point_of_interest,store"
+103,APPROXIMATE,"Urbana, IL, USA",ChIJj0KEhJbXDIgRQWUMOa3LjfQ,"Frank,Urbana,United States",40.1105875,-88.2072697,1,,OK,"locality,political"
+104,ROOFTOP,"405 N Mathews Ave, Urbana, IL 61801, USA",ChIJfd8U9CbXDIgRwbykVuLghwY,"BeckmanInstitute,Urbana,United States",40.1157707,-88.2272043,1,61801,OK,"establishment,point_of_interest,university"
+105,ROOFTOP,"1600 E Golf Rd, Des Plaines, IL 60016, USA",ChIJ5_l5Y4a3D4gR75g_2RhZrcc," OaktonCom Coll DesPlaines IL,Urbana,United States",42.063388,-87.8802279,1,60016,OK,"establishment,point_of_interest,university"
+106,ROOFTOP,"Psychology Building, 603 E Daniel St, Champaign, IL 61820, USA",ChIJjeSv7D7XDIgRci6JvA_GrIg," PsychologyBuilding,Urbana,United States",40.107486,-88.2299551,1,61820,OK,premise
+107,ROOFTOP,"1301 W Springfield Ave, Urbana, IL 61801, USA",ChIJtViDlmrXDIgRwp5DMl59fK4," GraingerEngineeringLibrary,Urbana,United States",40.1124997,-88.2269172,1,61801,OK,"establishment,library,point_of_interest"
+108,ROOFTOP,"Temple Hoyne Buell Hall, 611 Lorado Taft Dr, Champaign, IL 61820, USA",ChIJx9vEPj3XDIgRap27cCFXGF4," TempleHoyneBuell Hall,Urbana,United States",40.1022591,-88.2279521,1,61820,OK,premise
+109,ROOFTOP,"902 W College Ct, Urbana, IL 61801, USA",ChIJxWYfbBrXDIgRK9TCHwDQ0Ew," PAR,Urbana,United States",40.0996804,-88.21975669999999,1,61801,OK,"establishment,point_of_interest,university"
+110,ROOFTOP,"1202 S 1st St, Champaign, IL 61820, USA",ChIJgf6T_jDXDIgRoEzZb0pxaOE,"Wassaja Hall,Urbana,United States",40.1037081,-88.23817939999999,1,61820,OK,"establishment,point_of_interest"
+111,ROOFTOP,"Flagg Hall, 1207 S 4th St, Champaign, IL 61820, USA",ChIJk0v5HTvXDIgRtreRbuYB8Jo," Flagg Hall,Urbana,United States",40.1027926,-88.2339513,1,61820,OK,premise
+112,GEOMETRIC_CENTER,"E Armory Ave, Champaign, IL 61820, USA",ChIJj9fBFjrXDIgRJRL8JZIAu-E," Armory,Urbana,United States",40.105402,-88.235534,1,61820,OK,route
+113,ROOFTOP,"2000 S Lincoln Ave, Urbana, IL 61802, USA",ChIJJ1MtBB3XDIgRxjnaIN56a8o," JapanHouse,Urbana,United States",40.0927979,-88.21790899999999,2,61802,OK,"establishment,point_of_interest"
+114,ROOFTOP,"506 S Wright St, Urbana, IL 61801, USA",ChIJU4SlTj7XDIgRsHBnnjflMYM," HenryAdministrationBldg,Urbana,United States",40.1083607,-88.2282133,1,61801,OK,"establishment,point_of_interest"
+115,ROOFTOP,"1304 W Green St, Urbana, IL 61801, USA",ChIJ-1qO-j_XDIgRRyMBf46-EXM,"EngrSciences Bld,Urbana,United States",40.1108597,-88.2261108,2,61801,OK,"establishment,point_of_interest"
