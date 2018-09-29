@@ -5,8 +5,8 @@ class Map extends Component {
     render() {
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
-                defaultCenter = { { lat: 40.1164, lng: 88.2434 } }
-                defaultZoom = { 13 }
+                defaultCenter = { { lat: 40.107472, lng: -88.227236 } }
+                defaultZoom = { 16 }
             >
             </GoogleMap>
         ));
