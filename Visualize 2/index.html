@@ -91,6 +91,62 @@
             text-align: center;
         }
 
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {display:none;}
+
+        .sliderSwitch {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .sliderSwitch:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .sliderSwitch {
+            background-color: #2196F3;
+        }
+
+        input:focus + .sliderSwitch {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .sliderSwitch:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliderSwitchs */
+        .sliderSwitch.round {
+            border-radius: 34px;
+        }
+
+        .sliderSwitch.round:before {
+            border-radius: 50%;
+        }
+
     </style>
 </head>
 <body>
@@ -105,20 +161,123 @@
     var time_chosen = 0;
     var circles = [];
     var map;
+    var curColor = 0;
     var slider = document.getElementById("myRange");
 
-    // SHOULD ONLY BE CALLED ONCE
-    function startup() {
+    function defaultMap(){
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 17,
             center: {lat: 40.107472, lng: -88.227236},
             mapTypeId: 'terrain'
         });
+    }
 
+    function darculaMap(){
+        // Create the map.
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: {lat: 40.107472, lng: -88.227236},
+            mapTypeId: 'terrain',
+            styles: [
+                {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+                {
+                    featureType: 'administrative.locality',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                },
+                {
+                    featureType: 'poi',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                },
+                {
+                    featureType: 'poi.park',
+                    elementType: 'geometry',
+                    stylers: [{color: '#263c3f'}]
+                },
+                {
+                    featureType: 'poi.park',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#6b9a76'}]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'geometry',
+                    stylers: [{color: '#38414e'}]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'geometry.stroke',
+                    stylers: [{color: '#212a37'}]
+                },
+                {
+                    featureType: 'road',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#9ca5b3'}]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'geometry',
+                    stylers: [{color: '#746855'}]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'geometry.stroke',
+                    stylers: [{color: '#1f2835'}]
+                },
+                {
+                    featureType: 'road.highway',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#f3d19c'}]
+                },
+                {
+                    featureType: 'transit',
+                    elementType: 'geometry',
+                    stylers: [{color: '#2f3948'}]
+                },
+                {
+                    featureType: 'transit.station',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'geometry',
+                    stylers: [{color: '#17263c'}]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#515c6d'}]
+                },
+                {
+                    featureType: 'water',
+                    elementType: 'labels.text.stroke',
+                    stylers: [{color: '#17263c'}]
+                }
+            ]
+        });
+    }
+
+    function changeMapColor(){
+        if (curColor == 0){
+            darculaMap();
+            curColor = 1;
+        } else {
+            defaultMap();
+            curColor = 0;
+        }
+    }
+
+    // SHOULD ONLY BE CALLED ONCE
+    function startup() {
+        // Create the map.
+        defaultMap();
         loadFile("map_data.json");
         tick();
-
     }
 
     function update_day(day) {
@@ -243,7 +402,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVnvwBcCllCfpVXnHh6OPiga3MiLcswGo&callback=startup">
 </script>
 
-<div class="btn-group" id="btn-group">
+<div class="btn-group" id="btn-group" style="margin-left:2%">
     <button onclick="update_day('Sun')">Sunday</button>
     <button onclick="update_day('M')" id="M">Monday</button>
     <button onclick="update_day('T')" id="T">Tuesday</button>
@@ -253,7 +412,7 @@
     <button onclick="update_day('S')" id="S">Saturday</button>
 </div>
 
-<div class="slidecontainer">
+<div class="slidecontainer" style="margin-left: 5%">
     <input type="range" min="300" max="1380" value="50" class="slider" id="myRange">
     <p class="serif" id="demo"></p>
 </div>
@@ -285,6 +444,11 @@
         output.innerHTML = convert_minutes_to_std_time(slider.value);
     }
 </script>
+<label class="switch" style="margin-left:2%">
+    <input type="checkbox" oninput="changeMapColor()">
+    <span class="sliderSwitch round">
+</span>
+</label>
 
 </body>
 </html>
