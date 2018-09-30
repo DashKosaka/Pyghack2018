@@ -100,20 +100,20 @@
     var citymap;
     var query;
     var drawn = false;
-    var day_chosen;
-    var time_chosen;
+    var day_chosen = 0;
+    var time_chosen = 0;
     var slider = document.getElementById("myRange");
 
     function update_day(day){
         day_chosen = day;
         console.log(day_chosen);
-        initMap(city_map, day_chosen, time_chosen);
+        initMap(citymap, day_chosen, time_chosen);
     }
 
     function update_time(time){
         time_chosen = time;
         console.log(time_chosen);
-        initMap(city_map, day_chosen, time_chosen);
+        initMap(citymap, day_chosen, time_chosen);
     }
 
     function loadFile(filename) {
@@ -150,9 +150,6 @@
     }
 
     function initMap(data, time, day) {
-        if (typeof(citymap) == 'undefined' || typeof(data) == 'undefined' || typeof(day) == 'undefined'){
-            return;
-        }
         var cur_query = populationAtLocation(data, time, day);
         query = cur_query;
 
@@ -197,8 +194,7 @@
     function tick() {
         requestAnimFrame(tick);
         if (citymap && !drawn)
-            initMap(citymap, "M", 900);
-
+            initMap(citymap, day_chosen, time_chosen);
     }
 
     function populationAtLocation(data, day, time) {
@@ -224,9 +220,9 @@
                 }
             }
         }
-//        for (var building in populations) {
-//            console.log(populations[building]);
-//        }
+       // for (var building in populations) {
+       //     console.log(populations[building]);
+       // }
         return populations
     }
 </script>
