@@ -165,6 +165,7 @@
     var slider = document.getElementById("myRange");
 
     function defaultMap(){
+        document.body.style.backgroundColor = '#ffffff';
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 17,
@@ -174,6 +175,7 @@
     }
 
     function darculaMap(){
+        document.body.style.backgroundColor = '#515c6d';
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 17,
@@ -370,11 +372,11 @@
             for (var q in query) {
                 var val = query[q].population;
                 if(val < lower) {
-                    colors.push('#00AAAA');
+                    colors.push('#00bbb3');
                 } else if(val < higher) {
-                    colors.push('#FFFF00');
+                    colors.push('#ab5596');
                 } else {
-                    colors.push('#FF0000');
+                    colors.push('#cd3333');
                 }
             }
 
@@ -392,10 +394,10 @@
                 strokeOpacity: 0.8,
                 strokeWeight: 0,
                 fillColor: colors[counter],
-                fillOpacity: 0.35,
+                fillOpacity: 0.5,
                 map: map,
                 center: cur_query[building].center,
-                radius: Math.sqrt(cur_query[building].population) * 3
+                radius: Math.sqrt(cur_query[building].population) * 2
             });
             circles.push(cityCircle);
             counter++;
