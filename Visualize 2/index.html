@@ -98,7 +98,9 @@
             height: 34px;
         }
 
-        .switch input {display:none;}
+        .switch input {
+            display: none;
+        }
 
         .sliderSwitch {
             position: absolute;
@@ -147,6 +149,12 @@
             border-radius: 50%;
         }
 
+        /* Used to center inner div's*/
+        #inner {
+            width: 50%;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
@@ -164,7 +172,7 @@
     var curColor = 0;
     var slider = document.getElementById("myRange");
 
-    function defaultMap(){
+    function defaultMap() {
         document.body.style.backgroundColor = '#ffffff';
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
@@ -174,7 +182,7 @@
         });
     }
 
-    function darculaMap(){
+    function darculaMap() {
         document.body.style.backgroundColor = '#515c6d';
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
@@ -264,8 +272,8 @@
         });
     }
 
-    function changeMapColor(){
-        if (curColor == 0){
+    function changeMapColor() {
+        if (curColor == 0) {
             darculaMap();
             curColor = 1;
         } else {
@@ -283,11 +291,11 @@
     }
 
     function update_day(day) {
-        if (day_chosen != 0){
-            document.getElementById(day_chosen).style.background='#4CAF50';
+        if (day_chosen != 0) {
+            document.getElementById(day_chosen).style.background = '#4CAF50';
         }
         day_chosen = day;
-        document.getElementById(day_chosen).style.background='#193219';
+        document.getElementById(day_chosen).style.background = '#193219';
         // console.log(day_chosen);
         resetCircles();
         drawCircles(citymap, day_chosen, time_chosen);
@@ -353,16 +361,18 @@
         for (var q in query) {
             nums.push(query[q].population);
         }
-        nums.sort(function(a, b){return a-b});
+        nums.sort(function (a, b) {
+            return a - b
+        });
         console.log(nums);
 
 
         colors = []
-        if(nums.length == 0) {
+        if (nums.length == 0) {
 
-        } else if(nums.length == 1) {
+        } else if (nums.length == 1) {
             colors.push('#FF0000');
-        } else if(nums.length == 2) {
+        } else if (nums.length == 2) {
             colors.push('#FF0000');
             colors.push('#FF0000');
         } else {
@@ -371,9 +381,9 @@
 
             for (var q in query) {
                 var val = query[q].population;
-                if(val < lower) {
+                if (val < lower) {
                     colors.push('#00bbb3');
-                } else if(val < higher) {
+                } else if (val < higher) {
                     colors.push('#ab5596');
                 } else {
                     colors.push('#cd3333');
@@ -439,7 +449,8 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVnvwBcCllCfpVXnHh6OPiga3MiLcswGo&callback=startup">
 </script>
 
-<div class="btn-group" id="btn-group" style="margin-left:2%">
+<div id="inner">
+<div class="btn-group" id="btn-group" style="margin-left:8%">
     <button onclick="update_day('Sun')">Sunday</button>
     <button onclick="update_day('M')" id="M">Monday</button>
     <button onclick="update_day('T')" id="T">Tuesday</button>
@@ -448,8 +459,9 @@
     <button onclick="update_day('F')" id="F">Friday</button>
     <button onclick="update_day('S')" id="S">Saturday</button>
 </div>
+</div>
 
-<div class="slidecontainer" style="margin-left: 5%">
+<div class="slidecontainer" id="inner">
     <input type="range" min="300" max="1380" value="50" class="slider" id="myRange">
     <p class="serif" id="demo"></p>
 </div>
@@ -481,11 +493,14 @@
         output.innerHTML = convert_minutes_to_std_time(slider.value);
     }
 </script>
-<label class="switch" style="margin-left:2%">
-    <input type="checkbox" oninput="changeMapColor()">
-    <span class="sliderSwitch round">
+
+<div id="inner">
+    <label class="switch" style="margin-left:47%">
+        <input type="checkbox" oninput="changeMapColor()">
+        <span class="sliderSwitch round">
 </span>
-</label>
+    </label>
+</div>
 
 </body>
 </html>
