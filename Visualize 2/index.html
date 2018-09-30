@@ -20,7 +20,7 @@
 
         .slidecontainer {
             width: 50%;
-            padding: 2%;
+            padding: 1%;
         }
 
         .slider {
@@ -102,18 +102,36 @@
     var drawn = false;
     var day_chosen = 0;
     var time_chosen = 0;
+    var circles = [];
+    var map;
     var slider = document.getElementById("myRange");
 
-    function update_day(day){
-        day_chosen = day;
-        console.log(day_chosen);
-        initMap(citymap, day_chosen, time_chosen);
+    // SHOULD ONLY BE CALLED ONCE
+    function startup() {
+        // Create the map.
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: {lat: 40.107472, lng: -88.227236},
+            mapTypeId: 'terrain'
+        });
+
+        loadFile("map_data.json");
+        tick();
+
     }
 
-    function update_time(time){
+    function update_day(day) {
+        day_chosen = day;
+        // console.log(day_chosen);
+        resetCircles();
+        drawCircles(citymap, day_chosen, time_chosen);
+    }
+
+    function update_time(time) {
         time_chosen = time;
-        console.log(time_chosen);
-        initMap(citymap, day_chosen, time_chosen);
+        // console.log(time_chosen);
+        resetCircles();
+        drawCircles(citymap, day_chosen, time_chosen);
     }
 
     function loadFile(filename) {
@@ -132,7 +150,6 @@
                 (reason) => {
                     console.log('handle rejected promise (' + reason + ') here.')
                 });
-
     }
 
 
@@ -149,21 +166,51 @@
 
     }
 
-    function initMap(data, time, day) {
+//     function initMap(data, time, day) {
+//         var cur_query = populationAtLocation(data, time, day);
+//         query = cur_query;
+//
+// //        console.log(cur_query[building]["center"]["lat"]);
+//         // Construct the circle for each value in citymap.
+//         // Note: We scale the area of the circle based on the population.
+//         for (var building in cur_query) {
+//             // console.log(city);
+//             // Add the circle for this city to the map.
+// //            console.log(building);
+// //            console.log(cur_query[building].population);
+// //            console.log(cur_query[building].center);
+//             var cityCircle = new google.maps.Circle({
+//                 strokeColor: '#FF0000',
+//                 strokeOpacity: 0.8,
+//                 strokeWeight: 2,
+//                 fillColor: '#FF0000',
+//                 fillOpacity: 0.35,
+//                 map: map,
+//                 center: cur_query[building].center,
+//                 radius: Math.sqrt(cur_query[building].population) * 3
+//             });
+//         }
+//         drawn = true;
+//
+//     }
+
+    function tick() {
+        requestAnimFrame(tick);
+        if (citymap && !drawn)
+            drawCircles(citymap, day_chosen, time_chosen);
+    }
+
+    function resetCircles() {
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].setMap(null);
+        }
+    }
+
+    function drawCircles(data, time, day) {
+
         var cur_query = populationAtLocation(data, time, day);
         query = cur_query;
 
-        // Create the map.
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 17,
-            center: {lat: 40.107472, lng: -88.227236},
-            mapTypeId: 'terrain'
-        });
-
-//        console.log(cur_query[building]["center"]["lat"]);
-        // Construct the circle for each value in citymap.
-        // Note: We scale the area of the circle based on the population.
         for (var building in cur_query) {
             // console.log(city);
             // Add the circle for this city to the map.
@@ -180,21 +227,9 @@
                 center: cur_query[building].center,
                 radius: Math.sqrt(cur_query[building].population) * 3
             });
+            circles.push(cityCircle);
         }
         drawn = true;
-
-    }
-
-    function startup() {
-        loadFile("map_data.json");
-        tick();
-
-    }
-
-    function tick() {
-        requestAnimFrame(tick);
-        if (citymap && !drawn)
-            initMap(citymap, day_chosen, time_chosen);
     }
 
     function populationAtLocation(data, day, time) {
@@ -202,16 +237,16 @@
         var populations = {}
         var curr_pop;
         var curr_location;
-        for(var crn in data) {
+        for (var crn in data) {
 
             // Check if the day is the same
             // Check if time is after begin time
             // Check if time is before end time
-            if(data[crn].Day.indexOf(day) > -1 && data[crn]["Start time"] <= time && time <= data[crn]["End time"]) {
+            if (data[crn].Day.indexOf(day) > -1 && data[crn]["Start time"] <= time && time <= data[crn]["End time"]) {
                 curr_pop = data[crn].Population;
                 curr_location = data[crn].Location.lat.toString() + data[crn].Location.lng.toString();
 //                curr_location = data[crn
-                if(curr_location in populations)  {
+                if (curr_location in populations) {
                     populations[curr_location].population += curr_pop;
                 } else {
                     populations[curr_location] = {}
@@ -220,9 +255,9 @@
                 }
             }
         }
-       // for (var building in populations) {
-       //     console.log(populations[building]);
-       // }
+        // for (var building in populations) {
+        //     console.log(populations[building]);
+        // }
         return populations
     }
 </script>
@@ -243,7 +278,7 @@
 
 <div class="slidecontainer">
     <input type="range" min="0" max="1439" value="50" class="slider" id="myRange">
-<p class="serif" id="demo"></p>
+    <p class="serif" id="demo"></p>
 </div>
 
 
@@ -259,7 +294,7 @@
         } else {
             meridian = "AM";
         }
-        var converted_time_num = time_num%720
+        var converted_time_num = time_num % 720
         var hours = Math.floor(converted_time_num / 60);
         if (hours == 0) { // <--- WTF IS THIS CODE
             hours = 12;
