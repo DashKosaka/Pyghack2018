@@ -174,14 +174,41 @@
 
     function defaultMap() {
         document.body.style.backgroundColor = '#ffffff';
+        
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 17,
             center: {lat: 40.107472, lng: -88.227236},
-            mapTypeId: 'terrain'
+            mapTypeId: 'terrain',
+            "stylers": [
+      { "visibility": "off" }
+    ]
         });
+        calcRoute();
     }
 
+    function calcRoute() {
+                var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();        
+var ike = new google.maps.LatLng(40.103840, -88.235190);
+  var eceb = new google.maps.LatLng(40.114929, -88.228302);
+        directionsDisplay.setMap(map);
+  var request = {
+      origin: ike,
+      destination: eceb,
+      // Note that Javascript allows us to access the constant
+      // using square brackets and a string value as its
+      // "property."
+      travelMode: 'TRANSIT'
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == 'OK') {
+        console.log("YES");
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+    
     function darculaMap() {
         document.body.style.backgroundColor = '#515c6d';
         // Create the map.
@@ -270,6 +297,7 @@
                 }
             ]
         });
+        calcRoute();
     }
 
     function changeMapColor() {
