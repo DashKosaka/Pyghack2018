@@ -104,6 +104,7 @@
 
 
     var citymap;
+    var query;
     var drawn = false;
     var slider = document.getElementById("myRange");
 
@@ -143,6 +144,7 @@
     function initMap(data, time, day) {
 
         var cur_query = populationAtLocation(data, time, day);
+        query = cur_query;
 
         // Create the map.
 
@@ -152,11 +154,15 @@
             mapTypeId: 'terrain'
         });
 
+//        console.log(cur_query[building]["center"]["lat"]);
         // Construct the circle for each value in citymap.
         // Note: We scale the area of the circle based on the population.
         for (var building in cur_query) {
             // console.log(city);
             // Add the circle for this city to the map.
+//            console.log(building);
+//            console.log(cur_query[building].population);
+//            console.log(cur_query[building].center);
             var cityCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
                 strokeOpacity: 0.8,
@@ -165,7 +171,7 @@
                 fillOpacity: 0.35,
                 map: map,
                 center: cur_query[building].center,
-                radius: Math.sqrt(cur_query[building].population) * 5
+                radius: Math.sqrt(cur_query[building].population) * 3
             });
         }
         drawn = true;
@@ -201,17 +207,18 @@
                 curr_pop = data[crn].Population;
                 curr_location = data[crn].Location;
                 if(curr_building in populations)  {
-                    populations[curr_building]["population"] += curr_pop;
+                    populations[curr_building].population += curr_pop;
                 } else {
                     populations[curr_building] = {}
-                    populations[curr_building]["population"] = curr_pop;
-                    populations[curr_building]["center"] = curr_location;
+                    populations[curr_building].population = curr_pop;
+                    populations[curr_building].center = curr_location;
+//                    populations[curr_building]["center"] = {lat: 49.25, "lng": -123.1};
                 }
             }
         }
-        for (var building in populations) {
-            console.log(populations[building]);
-        }
+//        for (var building in populations) {
+//            console.log(populations[building]);
+//        }
         return populations
     }
 </script>
