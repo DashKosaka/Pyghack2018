@@ -45,7 +45,7 @@
             width: 25px;
             height: 25px;
             border-radius: 50%;
-            background: #5cf958;
+            background: #4CAF50;
             cursor: pointer;
         }
 
@@ -88,6 +88,7 @@
         /*Text style*/
         p.serif {
             font-family: "Calibri Light", Times, serif;
+            text-align: center;
         }
 
     </style>
@@ -121,7 +122,11 @@
     }
 
     function update_day(day) {
+        if (day_chosen != 0){
+            document.getElementById(day_chosen).style.background='#4CAF50';
+        }
         day_chosen = day;
+        document.getElementById(day_chosen).style.background='#193219';
         // console.log(day_chosen);
         resetCircles();
         drawCircles(citymap, day_chosen, time_chosen);
@@ -165,34 +170,6 @@
         });
 
     }
-
-//     function initMap(data, time, day) {
-//         var cur_query = populationAtLocation(data, time, day);
-//         query = cur_query;
-//
-// //        console.log(cur_query[building]["center"]["lat"]);
-//         // Construct the circle for each value in citymap.
-//         // Note: We scale the area of the circle based on the population.
-//         for (var building in cur_query) {
-//             // console.log(city);
-//             // Add the circle for this city to the map.
-// //            console.log(building);
-// //            console.log(cur_query[building].population);
-// //            console.log(cur_query[building].center);
-//             var cityCircle = new google.maps.Circle({
-//                 strokeColor: '#FF0000',
-//                 strokeOpacity: 0.8,
-//                 strokeWeight: 2,
-//                 fillColor: '#FF0000',
-//                 fillOpacity: 0.35,
-//                 map: map,
-//                 center: cur_query[building].center,
-//                 radius: Math.sqrt(cur_query[building].population) * 3
-//             });
-//         }
-//         drawn = true;
-//
-//     }
 
     function tick() {
         requestAnimFrame(tick);
@@ -268,16 +245,16 @@
 
 <div class="btn-group" id="btn-group">
     <button onclick="update_day('Sun')">Sunday</button>
-    <button onclick="update_day('M')">Monday</button>
-    <button onclick="update_day('T')">Tuesday</button>
-    <button onclick="update_day('W')">Wednesday</button>
-    <button onclick="update_day('R')">Thursday</button>
-    <button onclick="update_day('F')">Friday</button>
-    <button onclick="update_day('Sat')">Saturday</button>
+    <button onclick="update_day('M')" id="M">Monday</button>
+    <button onclick="update_day('T')" id="T">Tuesday</button>
+    <button onclick="update_day('W')" id="W">Wednesday</button>
+    <button onclick="update_day('R')" id="R">Thursday</button>
+    <button onclick="update_day('F')" id="F">Friday</button>
+    <button onclick="update_day('S')" id="S">Saturday</button>
 </div>
 
 <div class="slidecontainer">
-    <input type="range" min="0" max="1439" value="50" class="slider" id="myRange">
+    <input type="range" min="300" max="1380" value="50" class="slider" id="myRange">
     <p class="serif" id="demo"></p>
 </div>
 
