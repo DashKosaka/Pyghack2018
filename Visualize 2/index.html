@@ -57,9 +57,44 @@
             cursor: pointer;
         }
 
-        p.round2 {
-            border: 2px solid red;
-            border-radius: 8px;
+        /*Dropup menu css*/
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropup {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropup-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            bottom: 50px;
+            z-index: 1;
+        }
+
+        .dropup-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropup-content a:hover {background-color: #ccc}
+
+        .dropup:hover .dropup-content {
+            display: block;
+        }
+
+        .dropup:hover .dropbtn {
+            background-color: #2980B9;
         }
     </style>
 </head>
@@ -70,14 +105,18 @@
 
     var citymap;
     var drawn = false;
+    var slider = document.getElementById("myRange");
 
     function loadFile(filename) {
         myPromise = asyncGetFile(filename);
 
         myPromise.then((retrievedText) => {
             citymap = JSON.parse(retrievedText);
-            console.log("File retrieved");
-            console.log(citymap);
+            // for (var result in populationAtLocation(citymap, "M", 900)) {
+            //     console.log(result);
+            // }
+            // console.log("File retrieved");
+            // console.log(citymap);
 
         })
             .catch(
@@ -89,19 +128,22 @@
 
 
     function asyncGetFile(url) {
-        console.log("Getting text file");
+        // console.log("Getting text file");
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open("Get", url);
             xhr.onload = () => resolve(xhr.responseText);
             xhr.onerror = () => reject(xhr.statusText);
             xhr.send();
-            console.log("Made promise");
+            // console.log("Made promise");
         });
 
     }
 
-    function initMap() {
+    function initMap(data, time, day) {
+
+        var cur_query = populationAtLocation(data, time, day);
+
         // Create the map.
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -112,8 +154,8 @@
 
         // Construct the circle for each value in citymap.
         // Note: We scale the area of the circle based on the population.
-        for (var city in citymap) {
-            console.log(city);
+        for (var building in cur_query) {
+            // console.log(city);
             // Add the circle for this city to the map.
             var cityCircle = new google.maps.Circle({
                 strokeColor: '#FF0000',
@@ -122,8 +164,8 @@
                 fillColor: '#FF0000',
                 fillOpacity: 0.35,
                 map: map,
-                center: citymap[city].center,
-                radius: Math.sqrt(citymap[city].population) * 5
+                center: cur_query[building].center,
+                radius: Math.sqrt(cur_query[building].population) * 5
             });
         }
         drawn = true;
@@ -131,7 +173,7 @@
     }
 
     function startup() {
-        loadFile("data.json");
+        loadFile("map_data.json");
         tick();
 
     }
@@ -139,18 +181,61 @@
     function tick() {
         requestAnimFrame(tick);
         if (citymap && !drawn)
-            initMap();
+            initMap(citymap, "M", 600);
 
+    }
+
+    function populationAtLocation(data, day, time) {
+
+        var populations = {}
+        var curr_building;
+        var curr_pop;
+        var curr_location;
+        for(var crn in data) {
+
+            // Check if the day is the same
+            // Check if time is after begin time
+            // Check if time is before end time
+            if(data[crn].Day.indexOf(day) > -1 && data[crn]["Start time"] <= time && time <= data[crn]["End time"]) {
+                curr_building = data[crn].Building;
+                curr_pop = data[crn].Population;
+                curr_location = data[crn].Location;
+                if(curr_building in populations)  {
+                    populations[curr_building]["population"] += curr_pop;
+                } else {
+                    populations[curr_building] = {}
+                    populations[curr_building]["population"] = curr_pop;
+                    populations[curr_building]["center"] = curr_location;
+                }
+            }
+        }
+        for (var building in populations) {
+            console.log(populations[building]);
+        }
+        return populations
     }
 </script>
 <script src="webgl-utils.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVnvwBcCllCfpVXnHh6OPiga3MiLcswGo&callback=startup">
 </script>
-<p class="slidecontainer">
+
+<div class="dropup">
+    <button class="dropbtn">Dropup</button>
+    <div class="dropup-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+</div>
+
+
+<div class="slidecontainer">
     <input type="range" min="0" max="1439" value="50" class="slider" id="myRange">
 <p>Value: <span id="demo"></span></p>
-</p>
+</div>
+
+
 <script>
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
