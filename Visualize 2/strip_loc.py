@@ -14,13 +14,13 @@ import pandas as pd
 df = pd.read_csv('sp2017_final.csv')
 
 # Need - [Subject, Course, Start time, End time, Day, Building, Location, Total]
-compress = df[['Subject', 'Course', 'CRN', 'Start time', 'End time', 'Day', 'Building', 'Location', 'Total']]
+compress = df[['Subject', 'Course', 'CRN', 'Start time', 'End time', 'Day', 'Building', 'Location', 'Population']]
 
 headers = list(compress.CRN)
 
 jsn = {}
 for index, r in df.iterrows():
-    jsn[str(r.CRN)] = {'Subject':r.Subject, 'Course':r.Course, 'CRN':r.CRN, 'Start time':r['Start time'], 'End time':r['End time'], 'Day':r.Day, 'Building':r.Building, 'Location':r.Location, 'Total':r.Total}
+    jsn[str(r.CRN)] = {'Subject':r.Subject, 'Course':r.Course, 'CRN':r.CRN, 'Start time':r['Start time'], 'End time':r['End time'], 'Day':r.Day, 'Building':r.Building, 'Location':r.Location, 'Population':r.Population}
     
 with open('map_data.json', 'w') as outfile:
     json.dump(jsn, outfile)

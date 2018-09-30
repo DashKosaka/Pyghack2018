@@ -47,7 +47,7 @@ grades = np.array(df[['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', '
 for g in grades:
     enrolled.append(sum(g))
 
-df['Total'] = np.array(enrolled)
+df['Population'] = np.array(enrolled)
     
 
 df.to_csv('sp2017_final.csv', sep=',')
