@@ -18,6 +18,38 @@
             padding: 0;
         }
 
+        /* Hero Image */
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bus_image.jpg");
+            height: 30%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            font-family: Arial;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .hero-text button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 10px 25px;
+            color: black;
+            background-color: #ddd;
+            text-align: center;
+            cursor: pointer;
+        }
+
         .slidecontainer {
             width: 50%;
             padding: 1%;
@@ -158,6 +190,13 @@
     </style>
 </head>
 <body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:50px"> PyggyBack</h1>
+        <p>Dash Kosaka, Henry Woo</p>
+        <p>Marek Wasilczuk, Michael Tzeng</p>
+    </div>
+</div>
 <div id="map"></div>
 <script>
 
@@ -174,7 +213,6 @@
 
     function defaultMap() {
         document.body.style.backgroundColor = '#ffffff';
-        
         // Create the map.
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 17,
@@ -187,28 +225,6 @@
         calcRoute();
     }
 
-    function calcRoute() {
-                var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer();        
-var ike = new google.maps.LatLng(40.103840, -88.235190);
-  var eceb = new google.maps.LatLng(40.114929, -88.228302);
-        directionsDisplay.setMap(map);
-  var request = {
-      origin: ike,
-      destination: eceb,
-      // Note that Javascript allows us to access the constant
-      // using square brackets and a string value as its
-      // "property."
-      travelMode: 'TRANSIT'
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == 'OK') {
-        console.log("YES");
-      directionsDisplay.setDirections(response);
-    }
-  });
-}
-    
     function darculaMap() {
         document.body.style.backgroundColor = '#515c6d';
         // Create the map.
@@ -298,6 +314,28 @@ var ike = new google.maps.LatLng(40.103840, -88.235190);
             ]
         });
         calcRoute();
+    }
+
+    function calcRoute() {
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var ike = new google.maps.LatLng(40.103840, -88.235190);
+        var eceb = new google.maps.LatLng(40.114929, -88.228302);
+        directionsDisplay.setMap(map);
+        var request = {
+            origin: ike,
+            destination: eceb,
+            // Note that Javascript allows us to access the constant
+            // using square brackets and a string value as its
+            // "property."
+            travelMode: 'TRANSIT'
+        };
+        directionsService.route(request, function(response, status) {
+            if (status == 'OK') {
+                console.log("YES");
+                directionsDisplay.setDirections(response);
+            }
+        });
     }
 
     function changeMapColor() {
@@ -490,7 +528,7 @@ var ike = new google.maps.LatLng(40.103840, -88.235190);
 </div>
 
 <div class="slidecontainer" id="inner">
-    <input type="range" min="300" max="1380" value="50" class="slider" id="myRange">
+    <input type="range" min="300" max="1380" value="300" class="slider" id="myRange">
     <p class="serif" id="demo"></p>
 </div>
 
