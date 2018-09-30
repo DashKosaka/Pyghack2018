@@ -347,6 +347,40 @@
         var cur_query = populationAtLocation(data, time, day);
         query = cur_query;
 
+        var nums = [];
+        for (var q in query) {
+            nums.push(query[q].population);
+        }
+        nums.sort(function(a, b){return a-b});
+        console.log(nums);
+
+
+        colors = []
+        if(nums.length == 0) {
+
+        } else if(nums.length == 1) {
+            colors.push('#FF0000');
+        } else if(nums.length == 2) {
+            colors.push('#FF0000');
+            colors.push('#FF0000');
+        } else {
+            var lower = nums[Math.floor(nums.length / 3)];
+            var higher = nums[Math.floor(nums.length / 3 * 2)];
+
+            for (var q in query) {
+                var val = query[q].population;
+                if(val < lower) {
+                    colors.push('#00AAAA');
+                } else if(val < higher) {
+                    colors.push('#FFFF00');
+                } else {
+                    colors.push('#FF0000');
+                }
+            }
+
+        }
+
+        counter = 0;
         for (var building in cur_query) {
             // console.log(city);
             // Add the circle for this city to the map.
@@ -354,16 +388,17 @@
 //            console.log(cur_query[building].population);
 //            console.log(cur_query[building].center);
             var cityCircle = new google.maps.Circle({
-                strokeColor: '#FF0000',
+                strokeColor: colors[counter],
                 strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#FF0000',
+                strokeWeight: 0,
+                fillColor: colors[counter],
                 fillOpacity: 0.35,
                 map: map,
                 center: cur_query[building].center,
                 radius: Math.sqrt(cur_query[building].population) * 3
             });
             circles.push(cityCircle);
+            counter++;
         }
         drawn = true;
     }
