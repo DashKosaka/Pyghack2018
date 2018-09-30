@@ -4,6 +4,7 @@ Created on Sat Sep 29 21:33:46 2018
 
 @author: Dash
 """
+# File before web crawling
 import pandas as pd
 import json
 

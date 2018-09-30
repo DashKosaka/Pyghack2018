@@ -8,34 +8,19 @@ Created on Sat Sep 29 19:12:00 2018
 import numpy as np
 import re
 import json
+import csv
+import pandas as pd
 
+df = pd.read_csv('sp2017_final.csv')
 
-with open('buildings2.csv', 'r') as f:
-        
-    data = (f.readlines())
+# Need - [Subject, Course, Start time, End time, Day, Building, Location, Total]
+compress = df[['Subject', 'Course', 'CRN', 'Start time', 'End time', 'Day', 'Building', 'Location', 'Total']]
+
+headers = list(compress.CRN)
+
+jsn = {}
+for index, r in df.iterrows():
+    jsn[str(r.CRN)] = {'Subject':r.Subject, 'Course':r.Course, 'CRN':r.CRN, 'Start time':r['Start time'], 'End time':r['End time'], 'Day':r.Day, 'Building':r.Building, 'Location':r.Location, 'Total':r.Total}
     
-new_data = list(map(lambda x: x.split(','), data))
-
-jasons_file = {}
-for i in data:
-    try:
-        lat, long = re.findall('-?\d+\.\d+', i)
-        
-        names = re.findall(',"(.*?)",', i)
-        jasons_file[names[1]] = {'center':{'lat': float(lat), 'lng': float(long)}, 'population':10}
-    except:
-        pass
-    
-with open('data.json', 'w') as outfile:
-    json.dump(jasons_file, outfile)
-'''
-for i in data:
-    dec = re.findall('\d+\.\d+', i)
-    names = re.findall(',".*?",', i)
-    print(len(names))
-
-
-lat = 
-long = 
-
-'''
+with open('map_data.json', 'w') as outfile:
+    json.dump(jsn, outfile)

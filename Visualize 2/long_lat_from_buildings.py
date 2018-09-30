@@ -24,20 +24,23 @@ def get_data(building):
 def get_location(jsn):
     
     try:
-        return jsn['results']['geometry']['location']
+        return jsn['results'][0]['geometry']['location']
     except:
         print(jsn)
         os.exit('Uhoh....')
         
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv('sp2017_plus.csv')
 
 locations = []
+mapping = {'ARR Inst Labor &  Industrial Rel': {'lat':40.105419, 'lng':-88.235832}}
 for b in df.Building:
-    resp = get_data(b)
-    locations.append(get_location(resp))
+    
+    if b not in mapping:
+        mapping[b] = get_location(get_data(b))
+    locations.append(mapping[b])
 
-locations = np.array(locations)
-df['Location'] = locations
+locations_ = np.array(locations)
+df['Location'] = locations_
 
 enrolled = []
 grades = np.array(df[['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F']].iloc[:,:])
@@ -47,7 +50,7 @@ for g in grades:
 df['Total'] = np.array(enrolled)
     
 
-df.to_csv('dataset_final.csv', sep=',')
+df.to_csv('sp2017_final.csv', sep=',')
 
 
 
