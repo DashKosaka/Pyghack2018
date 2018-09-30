@@ -8,7 +8,7 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-            height: 90%;
+            height: 80%;
         }
 
         /* Optional: Makes the sample page fill the window. */
@@ -57,45 +57,39 @@
             cursor: pointer;
         }
 
-        /*Dropup menu css*/
-        .dropbtn {
-            background-color: #3498DB;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
+        /*Button group css*/
+        .btn-group button {
+            background-color: #4CAF50; /* Green background */
+            border: #4CAF50; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+            font-family: "Calibri Light", Times, serif;
+            font-size: 20px;
         }
 
-        .dropup {
-            position: relative;
-            display: inline-block;
+        .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
         }
 
-        .dropup-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            bottom: 50px;
-            z-index: 1;
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
         }
 
-        .dropup-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            background-color: #3e8e41;
         }
 
-        .dropup-content a:hover {background-color: #ccc}
-
-        .dropup:hover .dropup-content {
-            display: block;
+        /*Text style*/
+        p.serif {
+            font-family: "Calibri Light", Times, serif;
         }
 
-        .dropup:hover .dropbtn {
-            background-color: #2980B9;
-        }
     </style>
 </head>
 <body>
@@ -106,7 +100,21 @@
     var citymap;
     var query;
     var drawn = false;
+    var day_chosen;
+    var time_chosen;
     var slider = document.getElementById("myRange");
+
+    function update_day(day){
+        day_chosen = day;
+        console.log(day_chosen);
+        initMap(city_map, day_chosen, time_chosen);
+    }
+
+    function update_time(time){
+        time_chosen = time;
+        console.log(time_chosen);
+        initMap(city_map, day_chosen, time_chosen);
+    }
 
     function loadFile(filename) {
         myPromise = asyncGetFile(filename);
@@ -142,7 +150,9 @@
     }
 
     function initMap(data, time, day) {
-
+        if (typeof(citymap) == 'undefined' || typeof(data) == 'undefined' || typeof(day) == 'undefined'){
+            return;
+        }
         var cur_query = populationAtLocation(data, time, day);
         query = cur_query;
 
@@ -187,14 +197,13 @@
     function tick() {
         requestAnimFrame(tick);
         if (citymap && !drawn)
-            initMap(citymap, "M", 600);
+            initMap(citymap, "M", 900);
 
     }
 
     function populationAtLocation(data, day, time) {
 
         var populations = {}
-        var curr_building;
         var curr_pop;
         var curr_location;
         for(var crn in data) {
@@ -203,16 +212,15 @@
             // Check if time is after begin time
             // Check if time is before end time
             if(data[crn].Day.indexOf(day) > -1 && data[crn]["Start time"] <= time && time <= data[crn]["End time"]) {
-                curr_building = data[crn].Building;
                 curr_pop = data[crn].Population;
-                curr_location = data[crn].Location;
-                if(curr_building in populations)  {
-                    populations[curr_building].population += curr_pop;
+                curr_location = data[crn].Location.lat.toString() + data[crn].Location.lng.toString();
+//                curr_location = data[crn
+                if(curr_location in populations)  {
+                    populations[curr_location].population += curr_pop;
                 } else {
-                    populations[curr_building] = {}
-                    populations[curr_building].population = curr_pop;
-                    populations[curr_building].center = curr_location;
-//                    populations[curr_building]["center"] = {lat: 49.25, "lng": -123.1};
+                    populations[curr_location] = {}
+                    populations[curr_location].population = curr_pop;
+                    populations[curr_location].center = data[crn].Location;
                 }
             }
         }
@@ -227,19 +235,19 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVnvwBcCllCfpVXnHh6OPiga3MiLcswGo&callback=startup">
 </script>
 
-<div class="dropup">
-    <button class="dropbtn">Dropup</button>
-    <div class="dropup-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-    </div>
+<div class="btn-group" id="btn-group">
+    <button onclick="update_day('Sun')">Sunday</button>
+    <button onclick="update_day('M')">Monday</button>
+    <button onclick="update_day('T')">Tuesday</button>
+    <button onclick="update_day('W')">Wednesday</button>
+    <button onclick="update_day('R')">Thursday</button>
+    <button onclick="update_day('F')">Friday</button>
+    <button onclick="update_day('Sat')">Saturday</button>
 </div>
-
 
 <div class="slidecontainer">
     <input type="range" min="0" max="1439" value="50" class="slider" id="myRange">
-<p>Value: <span id="demo"></span></p>
+<p class="serif" id="demo"></p>
 </div>
 
 
@@ -255,16 +263,17 @@
         } else {
             meridian = "AM";
         }
-        time_num = time_num%720
-        var hours = Math.floor(time_num / 60);
+        var converted_time_num = time_num%720
+        var hours = Math.floor(converted_time_num / 60);
         if (hours == 0) { // <--- WTF IS THIS CODE
             hours = 12;
         }
-        var minutes = ("0" + (time_num % 60)).slice(-2);
+        var minutes = ("0" + (converted_time_num % 60)).slice(-2);
         return "" + hours + ":" + minutes + meridian;
     }
 
     slider.oninput = function () {
+        update_time(slider.value);
         output.innerHTML = convert_minutes_to_std_time(slider.value);
     }
 </script>
