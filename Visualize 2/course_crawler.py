@@ -31,8 +31,9 @@ def find_course(year, sem, major, course):
 
 def convert_time_string_to_minutes(time_string):
     result = 0
-    if time_string[-2] == "PM":
+    if time_string[-2:] == "PM":
         result += 60 * 12
+
     time_string = time_string[:-2].split(":")
     result += int(time_string[0]) * 60
     result += int(time_string[1])
@@ -71,7 +72,6 @@ def get_time_day_location(CRN, response):
 
 sp2017_df = pd.read_csv('sp2017.csv')
 
-i = 0
 for index, row in sp2017_df.iterrows():
     try:
         cur_info_time_day_location = get_time_day_location(str(row["CRN"]),
@@ -84,6 +84,7 @@ for index, row in sp2017_df.iterrows():
     except:
         pass
 
-sp2017_df.dropna(how='any')
+sp2017_df = sp2017_df.dropna(how='any')
 sp2017_df.to_csv('sp2017_plus.csv', sep=',')
+print(sp2017_df)
 
