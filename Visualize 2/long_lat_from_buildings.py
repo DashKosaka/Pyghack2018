@@ -39,6 +39,14 @@ for b in df.Building:
 locations = np.array(locations)
 df['Location'] = locations
 
+enrolled = []
+grades = np.array(df[['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F']].iloc[:,:])
+for g in grades:
+    enrolled.append(sum(g))
+
+df['Total'] = np.array(enrolled)
+    
+
 df.to_csv('dataset_final.csv', sep=',')
 
 
